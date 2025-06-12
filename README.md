@@ -1,8 +1,7 @@
 SMART SOLUTION FOR SURPLUS FOOD REDISTRIBUTION.
      
      PROBLEM IDENTIFICATION:
-     
-       How might we innovate to address urban excess food waste, hunger-related deaths, 
+      How might we innovate to address urban excess food waste, hunger-related deaths, 
 and create a logistic network with innovative technology and the cost-effective storage solutions?
      SOLUTION:     
       	Develop a web application to connect surplus food providers with the deficient 
