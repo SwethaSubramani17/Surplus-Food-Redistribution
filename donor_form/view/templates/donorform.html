@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+<title>Donor Form</title>
+</head>
+<body>
+<style>
+:root {
+    --main-color: #ff702a;
+    --text-color:#fff;
+    --bg-color: hsl(249, 20%, 14%);
+    --big-font: 5rem;
+    --h1-font: 2.25rem;
+}
+*::selection {
+    background: var(--main-color);
+    color:#fff;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(249, 20%, 14%);
+}
+body h1{
+    color:#ff702a;
+    text-align: center;
+}
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color:#fff;
+}
+input[type="text"],
+input[type="number"],
+input[type="file"]{
+   width: 70%;
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #fff;
+   border-radius: 5px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color:#ff702a;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color:hsl(249, 20%, 14%);
+    transform: translateX(-12px);
+}
+</style>
+    <div class="container">
+        <h1>Donate Food</h1>
+        <form action="/submit" method="post">
+    <label for="donorName">Donor Name:</label>
+                <input type="text" id="donorname" name="donorName" required>
+            
+                <label for="foodName">Food Name:</label>
+                <input type="text" id="foodname" name="foodName" required>
+            
+          
+                <label for="foodType">Food Type:</label>
+                <select id="foodtype" name="foodtype">
+                    <option value="veg">Vegetarian</option>
+                    <option value="non-veg">Non-Vegetarian</option>
+                </select>
+            
+            
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity">
+            
+                <label for="preparationTime">Preparation Time:</label>
+                <input type="datetime-local" id="preparationTime" name="preparationTime" required>
+    <button type="submit">Submit</button>
+</form>
+
+    </div>
+</body>   
+</html>
+

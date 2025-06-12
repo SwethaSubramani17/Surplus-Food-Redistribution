@@ -1,0 +1,28 @@
+import sqlite3
+
+# Create a connection to the SQLite database
+conn = sqlite3.connect('donors.db')
+cursor = conn.cursor()
+
+# Create the donorforms table in SQLite
+cursor.execute('''
+    CREATE TABLE donorform (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        donor_id INTEGER,
+        donor_name VARCHAR(50),
+        food_id INTEGER,
+        food_name VARCHAR(50),
+        food_type VARCHAR(20),
+        quantity INTEGER,
+        preparation_time TEXT,
+        available BOOLEAN,
+        FOREIGN KEY (donor_id) REFERENCES donor(id)  -- Assuming donor table exists
+    )
+''')
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
+
+print("SQLite table 'donorform' created successfully.")
+
