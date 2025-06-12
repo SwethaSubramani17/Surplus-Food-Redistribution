@@ -1,0 +1,167 @@
+feedback.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: hsl(249, 20%, 14%);
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ff702a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:hsl(249, 20%, 14%);
+    transform: translateX(12px);
+}
+
+#confirmation {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #dff0d8;
+    color: #ff702a;
+}
+</style>
+    <h1>Feedback</h1>
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+            <option value="">Select</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very Good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+        </select><br><br>
+        
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+        
+        <button type="submit">Submit Feedback</button>
+    </form>
+    
+    <div id="confirmation" style="display: none;">
+        <p>Thank you for your feedback!</p>
+    </div>
+    <script>
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Collect form data
+    var formData = new FormData(event.target);
+    var feedbackData = {};
+    formData.forEach(function(value, key){
+        feedbackData[key] = value;
+    });
+    
+    // Post data to server (replace this with your server endpoint)
+    // For example:
+    // fetch('your-server-endpoint', {
+    //     method: 'POST',
+    //     body: JSON.stringify(feedbackData),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }).then(function(response) {
+    //     if (response.ok) {
+    //         document.getElementById("feedbackForm").reset();
+    //         document.getElementById("confirmation").style.display = "block";
+    //     } else {
+    //         alert('Error: ' + response.statusText);
+    //     }
+    // }).catch(function(error) {
+    //     console.error('Error:', error);
+    // });
+    
+    // For demonstration, just show confirmation
+    document.getElementById("feedbackForm").reset();
+    document.getElementById("confirmation").style.display = "block";
+});
+</script>
+</body>
+</html>
+
+
+feedback.js:
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Collect form data
+    var formData = new FormData(event.target);
+    var feedbackData = {};
+    formData.forEach(function(value, key){
+        feedbackData[key] = value;
+    });
+    
+    // Post data to server (replace this with your server endpoint)
+    // For example:
+    // fetch('your-server-endpoint', {
+    //     method: 'POST',
+    //     body: JSON.stringify(feedbackData),
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }).then(function(response) {
+    //     if (response.ok) {
+    //         document.getElementById("feedbackForm").reset();
+    //         document.getElementById("confirmation").style.display = "block";
+    //     } else {
+    //         alert('Error: ' + response.statusText);
+    //     }
+    // }).catch(function(error) {
+    //     console.error('Error:', error);
+    // });
+    
+    // For demonstration, just show confirmation
+    document.getElementById("feedbackForm").reset();
+    document.getElementById("confirmation").style.display = "block";
+});
