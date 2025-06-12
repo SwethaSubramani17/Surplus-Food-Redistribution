@@ -1,0 +1,31 @@
+import mysql.connector
+
+# Connect to MySQL database
+mysql_conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="SwethaSakthi",
+    database="receivers_db"
+)
+mysql_cursor = mysql_conn.cursor()
+
+# Create the receivers table in MySQL
+mysql_cursor.execute('''
+    CREATE TABLE IF NOT EXISTS receivers (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(50),
+        email VARCHAR(255) UNIQUE,
+        phone_number VARCHAR(10),
+        password VARCHAR(10),
+        address TEXT,
+        status INT DEFAULT 1,
+        created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )
+''')
+
+# Close MySQL connection
+mysql_cursor.close()
+mysql_conn.close()
+
+print("MySQL table 'receivers' created successfully.")
