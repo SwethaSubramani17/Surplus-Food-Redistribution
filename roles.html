@@ -1,0 +1,89 @@
+index.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select the Roles</title>
+    </head>
+<body> 
+<style>
+:root {
+    --main-color: #ff702a;
+    --text-color:#fff;
+    --bg-color: hsl(249, 20%, 14%);
+    --big-font: 5rem;
+    --h1-font: 2.25rem;
+}
+*::selection {
+    background: var(--main-color);
+    color:#fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--bg-color);
+    font-family: none;
+    color:#fff;
+}
+.content {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items:center;
+    margin-top: 50px;
+}
+.roles {
+    margin-top: 50px;
+    text-align: center;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px
+}
+.role button{
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    background-color:#ff702a;
+    border-radius: 30%;
+    
+}
+body h1 {
+    font-size: 36px;
+    color: #ff702a;
+    text-align: center;
+    padding: 30px;
+ }
+ body h2 {
+    font-size: 30px;
+    color:var(--text-color);
+    text-align:center;
+    padding: 20px;
+ }
+.roles button:hover{
+    background-color:#fff;
+    transform: translateX(-12px) ;
+}
+</style>
+    <div class="content">
+       <h1>Join Us in Making a Difference!!</h1>
+       <h2> Select the Roles</h2>
+         <div class="roles">
+            <div class= "role">
+            <button onclick="selectRole('Donor')"><a href="/donor">Donor</a></button><br><br></div>
+            <div class= "role">
+            <button onclick="selectRole('Receiver')"><a href="/receiver">Receiver</a></button><br><br></div>
+            <div class= "role">
+            <button onclick="selectRole('Volunteer')"><a href="/volunteer">Volunteer</a></button><br><br></div>
+            <div class= "role">
+            <button onclick="selectRole('Food Courier')"><a href="/foodcourier">Food Courier</a></button><br><br></div>
+            <div class= "role">
+                <button onclick="selectRole('Food bank')"><a href="FB reg.html">Food Bank</a></button><br><br></div>
+        </div>
+    </div>
+    
+</script>
+</body>
+</html> 
