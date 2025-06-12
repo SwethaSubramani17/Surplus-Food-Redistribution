@@ -1,5 +1,6 @@
-##SMART SOLUTION FOR SURPLUS FOOD REDISTRIBUTION.
-     #PROBLEM IDENTIFICATION:
+SMART SOLUTION FOR SURPLUS FOOD REDISTRIBUTION.
+     
+     PROBLEM IDENTIFICATION:
      
        How might we innovate to address urban excess food waste, hunger-related deaths, and create a logistic network 
 with innovative technology and the cost-effective storage solutions?
@@ -26,5 +27,11 @@ for distribution in near hunger-related persons.
      If the food request is not accepted by any other receivers or volunteers, then the request automatically 
 go to the foodbank where the care of food is taken. Safety and Hygiene are maintained in foodbanks.  
 So, food wastage or food spoilage cannot occur. It will be a cost-effective storage solution.
+
+TECHNOLOGY USED:
+BACKEND: PYTHON, FLASK Server.
+FRONTEND: HTML, CSS, JAVASCRIPT.
+DATABASE: MYSQL.
+
 
       
