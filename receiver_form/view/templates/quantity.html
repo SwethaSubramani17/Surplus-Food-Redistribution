@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Quantity</title>
+</head>
+<body>
+    <h1>Enter Quantity</h1>
+    <form action="/receiverform/{{ id }}/submit-decision" method="post">
+        <label for="quantity">Enter Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+        <input type="hidden" name="decision" value="accept">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

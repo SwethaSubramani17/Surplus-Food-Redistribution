@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Details</title>
+</head>
+<body>
+<style>
+body{
+background-color:hsl(249, 20%, 14%);
+text-align:center;
+}
+h1{
+color:#ff702a;
+text-align:center;
+}
+p{
+color:#fff;
+text-align:center;
+}
+</style>
+    <h1>Donation Details</h1>
+    <p><strong>Donor Name:</strong> {{ receiver_form.donor_name }}</p>
+    <p><strong>Food Name:</strong> {{ receiver_form.food_name }}</p>
+    <p><strong>Food Type:</strong> {{ receiver_form.food_type }}</p>
+    <p><strong>Quantity:</strong> {{ receiver_form.quantity }}</p>
+    <p><strong>Preparation Time:</strong> {{ receiver_form.preparation_time }}</p>
+            <div class ="buttons-container">
+            <button class="button accept-button" onclick="accept()"> Accept</button>
+            <button class="button reject-button" onclick="reject()"> Reject</button>
+            </div>
+    
+</body>
+</html>
+

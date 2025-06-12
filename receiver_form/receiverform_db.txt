@@ -1,0 +1,36 @@
+import mysql.connector
+
+# Connect to the MySQL server
+mysql_conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="your_password",  # Update with your MySQL password
+    database="receiverforms_db"
+)
+
+# Create a cursor object to interact with the database
+mysql_cursor = mysql_conn.cursor()
+
+# Create the receiverforms table in MySQL
+mysql_cursor.execute('''
+    CREATE TABLE IF NOT EXISTS receiverforms (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        donor_id INT NOT NULL,
+        donor_name VARCHAR(50) NOT NULL,
+        food_name VARCHAR(50) NOT NULL,
+        food_type VARCHAR(20) NOT NULL,
+        quantity INT NOT NULL,
+        preparation_time TIMESTAMP NOT NULL,
+        available BOOLEAN NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )
+''')
+
+# Commit the changes and close the cursor and connection
+mysql_conn.commit()
+mysql_cursor.close()
+mysql_conn.close()
+
+print("MySQL table 'receiverforms' created successfully.")
+
