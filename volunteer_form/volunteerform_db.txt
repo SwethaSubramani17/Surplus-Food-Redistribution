@@ -1,0 +1,31 @@
+# Connect to the MySQL server
+mysql_conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="SwethaSakthi",
+    database="receiverforms_db"
+)
+
+# Create a cursor object to interact with the database
+mysql_cursor = mysql_conn.cursor()
+
+# Create the volunteerforms table in MySQL
+mysql_cursor.execute('''
+    CREATE TABLE IF NOT EXISTS volunteerforms (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(50) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        phone VARCHAR(15) NOT NULL,
+        address VARCHAR(255) NOT NULL,
+        image LONGBLOB,
+        decision VARCHAR(10) NOT NULL
+    )
+''')
+
+# Commit the changes and close the cursor and connection
+mysql_conn.commit()
+mysql_cursor.close()
+mysql_conn.close()
+
+print("MySQL table 'volunteerforms' created successfully.")
+

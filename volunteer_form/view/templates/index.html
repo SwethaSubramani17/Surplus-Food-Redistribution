@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Voolunteer Form Application</title>
+</head>
+<body>
+<style>
+body{
+background-color:hsl(249, 20%, 14%);
+text-align:center;
+}
+h1{
+color:#ff702a;
+text-align:center;
+}
+p{
+color:#fff;
+text-align:center;
+}
+</style>
+    <h1>Welcome to the Volunteer Form Application</h1>
+    {% if donations_available %}
+        <p>Food donations are available.</p>
+        <a href="{{ url_for('view_donations') }}">View Food Donations</a>
+    {% else %}
+        <p>Sorry! There is no food donation available at the moment.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Donations</title>
+</head>
+<body>
+<style>
+body{
+background-color:hsl(249, 20%, 14%);
+text-align:center;
+}
+h1{
+color:#ff702a;
+text-align:center;
+}
+h2{
+color:#ff702a;
+text-align:center;
+}
+p{
+color:#fff;
+text-align:center;
+}
+</style>
+    <h1>Donated Food Details</h1>
+    <div class="donation-container">
+        {% for donation in donations %}
+        <div class="donation-item">
+            <h2>{{ donation.food_name }}</h2>
+            <p><strong>Donor Name:</strong> {{ donation.donor_name }}</p>
+            <p><strong>Food Type:</strong> {{ donation.food_type }}</p>
+            <p><strong>Quantity:</strong> {{ donation.quantity }}</p>
+            <p><strong>Preparation Time:</strong> {{ donation.preparation_time }}</p>
+            <div class="buttons-container">
+                <form action="{{ url_for('accept_food', id=donation.id) }}" method="POST" style="display: inline;">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button class="button accept-button" type="submit">Accept</button>
+                </form>
+                <form action="{{ url_for('reject_food', id=donation.id) }}" method="POST" style="display: inline;">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button class="button reject-button" type="submit">Reject</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
