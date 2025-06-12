@@ -1,0 +1,158 @@
+volunteer.html:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Registration page</title> 
+</head>
+<body>
+<style>
+:root {
+  --main-color: #ff702a;
+  --text-color:#fff;
+  --bg-color: hsl(249, 20%, 14%);
+  --big-font: 5rem;
+  --h2-font: 2.25rem;
+}
+*::selection {
+  background: var(--main-color);
+  color:#fff;
+}
+body {
+    font-family: none;
+    background-color: hsl(249, 20%, 14%);
+  }
+  .container h2 {
+    color: var(--main-color);
+    text-align: center;
+    padding: 10px;
+  }
+  .container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  body p {
+    background-color:#ff702a;
+    color:#fff;
+
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label{
+    display:block;
+    margin-bottom: 5px;
+  }
+  input[type="text"]
+  input[type="tel"]
+  input[type="email"]
+  input[type="password"] {
+    width: 400%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ff702a;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display:none;
+  }
+  button {
+    padding: 10px 20px;
+    background-color:#ff702a;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: hsl(249, 20%, 14%);
+    transform: translateX(-12px);
+  }
+</style>
+  <div class="container">
+  <h2>Volunteer Registration</h2>
+    <form action="volunteer login.html" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="Phone">Phone Number:</label>
+        <input type="tel" id="Phone" name="Phone" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="password"> Confirm Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="5" required></textarea>
+      </div>
+      <button type="Register">Register</button>
+    </form>
+    <p>If you are already registered, please <a href="volunteer login.html"><b>click here</b></a></p>
+  </div>
+<script>
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); //Prevent form submission 
+    const formData=new FormData(this);
+    fetch('your_signup_api_endpoint',{
+        method: 'POST',
+        body:formData
+    })
+    .then(response => {
+        if(!response.ok){
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data=> {
+        console.log('Signup successful:',data);
+    })
+    .catch(error=> {
+        console.error('Error during signup:',error);
+    });
+    //Get form input values
+    var name=document.getElementById("name").Value;
+    var phone=document.getElementById("phone").Value;
+    var email=document.getElementById("email").Value;
+    var password=document.getElementById("password").Value;
+    var confirm_password=document.getElementById("confirm_password").Value;
+    var address=document.getElementById("address").Value;
+  // Check if password and confirm password match
+  if(password !=confirm_password) {
+    alert("password do not match!");
+    return;//Stop further execution
+  }
+
+  //Perform registration logic (you can replace this with your own logic)
+  //For example,you can send the form data to a server using AJAX
+
+  //Display registrantion message
+  var registrationMessage=
+    document.getElementById("registrationMessage");
+    registrationMessage.style.display="block";
+});
+</script>
+</body>
+</html>
