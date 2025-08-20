@@ -1,46 +1,51 @@
 # Smart Solutions for Surplus Food Redistribution
 
 ## Description
-A full-stack web application designed to **reduce urban food waste** and **alleviate hunger-related issues** by connecting surplus food providers with areas in need.  
-- Donors: Restaurants, hotels, households, and events can post surplus food details.  
-- Recipients / NGOs: Can view available food listings and request pickups.  
-- Admin: Oversees users, requests, and ensures timely distribution.  
+A full-stack web application designed to **reduce urban food waste** and **alleviate hunger-related issues** by efficiently connecting surplus food providers with individuals and organizations in need.  
+The platform introduces an **innovation-driven and cost-effective food redistribution network**.  
 
-The system introduces a **harmonized and efficient food redistribution network** with innovative technology and cost-effective storage solutions.  
+### Roles in the System
+- **Donor:** Posts surplus food details including type, quantity, preparation time, and images.  
+- **Volunteers:** Help in distributing food to the needy.  
+- **Receivers:** Individuals or organizations in need of food.  
+- **Food Courier:** Collects and delivers food from donors to receivers.  
+- **Food Bank:** Handles unaccepted food requests, ensuring safety, hygiene, and proper storage.  
+
+The system ensures **timely delivery**, **hygienic handling**, and **cost-effective storage**, reducing both food wastage and hunger-related challenges.  
 
 ## Features
 **Donor Portal:**  
-- Register as a donor and post surplus food (type, quantity, expiry).  
-- Schedule pickup times and locations.  
-- Track status of food redistribution requests.  
+- Register and post surplus food details with images, type, quantity, and preparation time.  
+- Track status of food requests.  
 
-**Recipient / NGO Portal:**  
-- Browse available surplus food listings.  
-- Request food pickups and coordinate logistics.  
+**Volunteer & Receiver Portal:**  
+- View available food postings and accept requests.  
+- Participate in distribution activities or receive food as needed.  
 
-**Admin Dashboard:**  
-- Manage donor and recipient accounts.  
-- Track all food redistribution activities.  
-- Ensure efficient, timely, and safe food delivery.  
+**Food Courier / Food Bank:**  
+- Manage logistics for food collection and distribution.  
+- Ensure unaccepted food is stored safely to prevent spoilage.  
 
-**Problem-Solving Innovations:**  
-- Reduces urban food wastage from restaurants, events, and gatherings.  
-- Creates a cost-effective storage and redistribution network.  
-- Provides a clear channel for people willing to donate food but unsure how.  
+**Innovation Highlights:**  
+- Reduces food wastage from restaurants, events, and households.  
+- Provides a cost-effective storage solution in foodbanks.  
+- Creates a harmonized network for easy donations and distribution.  
 
 ## Technologies
-- Backend: Java, Spring Boot, Spring Security  
-- Frontend: HTML, CSS, JavaScript, Thymeleaf  
+**Software Requirements:**  
+- Frontend: HTML, CSS, JavaScript  
+- Backend: Python (Flask)  
 - Database: MySQL  
-- Validation: JSR-303/JSR-380 Bean Validation API  
-- Security: BCrypt password hashing, role-based authentication  
-- Tools: Maven, Postman for API testing  
+- Server: Flask Server  
+- Operating System: Windows family  
+
+**Hardware Requirements:**  
+- RAM: 4GB  
+- Processor: Intel i3 or higher  
 
 ## Getting Started
-**Prerequisites:** Java 17+, MySQL, Maven, IDE (Eclipse/IntelliJ)  
+**Prerequisites:** Python, MySQL, any IDE (PyCharm, VS Code, etc.)  
 
 **Clone the repository:**  
 ```bash
 git clone https://github.com/SwethaSubramani17/smart-food-redistribution.git
-
-    
